@@ -9,21 +9,29 @@ import { Component } from '@angular/core'
 
 export class BmiCalcApp {
 
-    bmi: string;
+    bmi: string='';
+    height:any=0;
+    weight:any=0;
+
     constructor(){
-        this.bmi = '';
     }
 
-    calculateBMI(height:any, weight:any){
-      if (height === "" || isNaN(height)) 
+    calculateBMI(){
+      if (this.height === "" || isNaN(this.height)) 
         this.bmi = "Provide a valid Height!";
 
-      else if (weight === "" || isNaN(weight)) 
+      else if (this.weight === "" || isNaN(this.weight)) 
         this.bmi = "Provide a valid Weight!";
 
       else{
-        this.bmi = (weight / ((height * height) 
+        this.bmi = (this.weight / ((this.height * this.height) 
         / 10000)).toFixed(2);
       }  
+    }
+
+    clearForm(){
+        this.height=0;
+        this.weight=0
+        this.bmi=''
     }
 }

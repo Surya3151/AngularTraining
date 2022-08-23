@@ -2,11 +2,12 @@
 
   <h1>BMI Calculator</h1>
 
-  <label for="fname">Height(in cm):</label><br>
-  <input type="text" #height><br><br>
-  <label for="lname">Weight(in Kg):</label><br>
-  <input type="text" #weight><br><br>
-  <button (click)="calculateBMI(height.value, weight.value)">Submit</button>
+  <label for="height">Height(in cm):</label><br>
+  <input type="text" id="height" [(ngModel)]="height"><br><br>
+  <label for="weight">Weight(in Kg):</label><br>
+  <input type="text" id="weight" [(ngModel)]="weight"><br><br>
+  <input type="button" value="Submit" (click)="calculateBMI()">
+  <input type="button" value="Clear" (click)="clearForm()">
 
   <h2>BMI is: {{ bmi }}</h2>
 </body>
