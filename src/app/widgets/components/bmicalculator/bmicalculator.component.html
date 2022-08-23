@@ -1,0 +1,14 @@
+<body>
+
+    <h2>BMI Calculator</h2>
+    
+    <form action="/action_page.php">
+      <label for="fname">Height(in cm):</label><br>
+      <input type="text" id="fname" name="fname" #height><br><br>
+      <label for="lname">Weight(in Kg):</label><br>
+      <input type="text" id="lname" name="lname" #weight><br><br>
+      <button (click)="calculateBMI(height.value, weight.value)">Add</button>
+    </form> 
+    
+    <p>BMI is: {{ bmi }}</p>
+</body>
